@@ -392,32 +392,18 @@ bcscInit( const spmatrix_t     *spm,
                 pastix_int_t    initAt,
                 pastix_bcsc_t  *bcsc )
 {
-    spmatrix_t *spmg;
     double time = 0.;
 
-    if ( spm->loc2glob == NULL ) {
-        spmg = (spmatrix_t *)spm;
-    }
-#if defined(PASTIX_WITH_MPI)
-    else {
-        pastix_print(solvmtx->clustnum, 0, "bcscInit: the SPM has to be centralized for the moment\n");
-        spmg = spmGather( spm, -1 );
-    }
-#endif
-
     assert( ord->baseval == 0 );
-    assert( ord->vertnbr == spmg->n );
+    assert( ord->vertnbr == spm->n );
 
     clockStart(time);
+#if defined(PASTIX_WITH_MPI)
+    assert( spm->loc2glob == NULL );
+#endif
 
-    bcsc_init_centralized( spmg, ord, solvmtx, initAt, bcsc );
-
+    bcsc_init_centralized( spm, ord, solvmtx, initAt, bcsc );
     clockStop(time);
-
-    if( spmg != spm ) {
-        spmExit(spmg);
-        memFree_null( spmg );
-    }
 
     return time;
 }
