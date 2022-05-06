@@ -35,7 +35,6 @@ class Pastix < Formula
     args = ["-DCMAKE_INSTALL_PREFIX=#{prefix}",
             "-DBUILD_SHARED_LIBS=ON",
             "-DBUILD_DOCUMENTATION=OFF",
-            "-DBUILD_64bits=OFF",
             "-DPASTIX_INT64=OFF",
             "-DPASTIX_ORDERING_SCOTCH=ON",
             "-DPASTIX_WITH_FORTRAN=ON",

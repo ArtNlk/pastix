@@ -31,46 +31,6 @@ if (_mach_ppc)
     set(PASTIX_ARCH_PPC 1)
 endif (_mach_ppc)
 
-#
-# Fix the building system for 32 or 64 bits.
-#
-# On MAC OS X there is an easy solution, by setting the
-# CMAKE_OSX_ARCHITECTURES to a subset of the following values:
-# ppc;ppc64;i386;x86_64.
-# On Linux this is a little bit tricky. We have to check that the
-# compiler supports the -m32/-m64 flags as well as the linker.
-# Once this issue is resolved the CMAKE_C_FLAGS and CMAKE_C_LDFLAGS
-# have to be updated accordingly.
-#
-# TODO: Same trick for the Fortran compiler...
-#       no idea how to correctly detect if the required/optional
-#          libraries are in the correct format.
-#
-if (BUILD_64bits)
-  if( _match_xlc)
-    set( ARCH_BUILD "-q64" )
-  else (_match_xlc)
-    if( ${CMAKE_SYSTEM_PROCESSOR} STREQUAL "sparc64fx" )
-      set ( ARCH_BUILD " " )
-    else()
-      set( ARCH_BUILD "-m64" )
-    endif()
-  endif(_match_xlc)
-else (BUILD_64bits)
-  if( _match_xlc)
-    set( ARCH_BUILD "-q32" )
-  else (_match_xlc)
-    set( ARCH_BUILD "-m32" )
-  endif(_match_xlc)
-endif (BUILD_64bits)
-
-check_c_compiler_flag( ${ARCH_BUILD} C_M32or64 )
-if( C_M32or64 )
-  set( CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${ARCH_BUILD}" )
-  set( CMAKE_C_LDFLAGS "${CMAKE_C_LDFLAGS} ${ARCH_BUILD}" )
-  set( LOCAL_FORTRAN_LINK_FLAGS "${LOCAL_FORTRAN_LINK_FLAGS} ${ARCH_BUILD}" )
-endif( C_M32or64 )
-
 # Set warnings for debug builds
 check_c_compiler_flag( "-Wall" HAVE_WALL )
 if( HAVE_WALL )
@@ -234,10 +194,6 @@ IF (CMAKE_Fortran_COMPILER_WORKS)
     MESSAGE(ERROR "Please use the thread-safe version of the xlc compiler (xlc_r)")
   ENDIF (_match_xlc)
   STRING(REGEX MATCH "XL" _match_xlc ${CMAKE_C_COMPILER_ID})
-  IF (_match_xlc AND BUILD_64bits)
-    MESSAGE(STATUS "Add -q64 to the C compiler/linker.")
-    SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -q64")
-  ENDIF (_match_xlc AND BUILD_64bits)
 
   STRING(REGEX MATCH ".*xlf$" _match_xlf ${CMAKE_Fortran_COMPILER})
   IF (_match_xlf)
@@ -245,12 +201,8 @@ IF (CMAKE_Fortran_COMPILER_WORKS)
   ENDIF (_match_xlf)
   STRING(REGEX MATCH "XL$" _match_xlf ${CMAKE_Fortran_COMPILER_ID})
   IF (_match_xlf)
-    SET(arch_flags "-q32")
-    IF(BUILD_64bits)
-      SET(arch_flags "-q64")
-    ENDIF(BUILD_64bits)
-    MESSAGE(STATUS "Add ${arch_flags} and -nofor_main to the Fortran linker.")
-    SET(LOCAL_FORTRAN_LINK_FLAGS "${LOCAL_FORTRAN_LINK_FLAGS} ${arch_flags} -nofor_main")
+    MESSAGE(STATUS "Add -nofor_main to the Fortran linker.")
+    SET(LOCAL_FORTRAN_LINK_FLAGS "${LOCAL_FORTRAN_LINK_FLAGS} -nofor_main")
   ENDIF (_match_xlf)
 
 #

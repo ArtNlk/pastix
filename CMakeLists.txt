@@ -107,8 +107,6 @@ list(APPEND CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib")
 ### Misc options
 option(BUILD_SHARED_LIBS
   "Build shared libraries" OFF)
-option(BUILD_64bits
-  "Build 64 bits mode" ON)
 
 ### Distributed engine parameters
 option(PASTIX_WITH_MPI
