@@ -131,6 +131,7 @@ pastix_subtask_blend( pastix_data_t *pastix_data )
     SimuCtrl        *simuctrl;
     double           timer_all     = 0.;
     double           timer_current = 0.;
+    size_t           nnz;
 
     /*
      * Check parameters
@@ -547,6 +548,12 @@ pastix_subtask_blend( pastix_data_t *pastix_data )
         pastixSymbolPrintStats( pastix_data->symbmtx );
     }
 
+    /* Recompute nnz if overflow (int32) */
+    nnz = iparm[IPARM_NNZEROS];
+    if ( iparm[IPARM_NNZEROS] < 0 ) {
+        nnz = pastixSymbolGetNNZ( pastix_data->symbmtx );
+    }
+
     /* Symbol is not used anymore */
     pastixSymbolExit(pastix_data->symbmtx);
     memFree_null(pastix_data->symbmtx);
@@ -555,20 +562,19 @@ pastix_subtask_blend( pastix_data_t *pastix_data )
     {
         if (iparm[IPARM_FACTORIZATION] == PastixFactLU)
         {
-            iparm[IPARM_NNZEROS]        *= 2;
+            nnz                         *= 2;
             dparm[DPARM_PRED_FACT_TIME] *= 2.;
         }
-        dparm[DPARM_SOLV_FLOPS] = (double)iparm[IPARM_NNZEROS]; /* number of operations for solve */
+        dparm[DPARM_SOLV_FLOPS] = (double)nnz; /* number of operations for solve */
 
         iparm[IPARM_NNZEROS_BLOCK_LOCAL] = solvmtx_loc->coefnbr;
 
         /* Affichage */
-        dparm[DPARM_FILL_IN] = (double)(iparm[IPARM_NNZEROS]) / (double)(pastix_data->csc->gnnzexp);
+        dparm[DPARM_FILL_IN] = (double)(nnz) / (double)(pastix_data->csc->gnnzexp);
 
         if (verbose > PastixVerboseNot) {
             pastix_print( procnum, 0, OUT_BLEND_SUMMARY,
-                          (long)iparm[IPARM_NNZEROS],
-                          (double)dparm[DPARM_FILL_IN],
+                          nnz, (double)dparm[DPARM_FILL_IN],
                           pastixFactotypeStr( iparm[IPARM_FACTORIZATION] ),
                           pastix_print_value( dparm[DPARM_FACT_THFLOPS] ),
                           pastix_print_unit( dparm[DPARM_FACT_THFLOPS] ),

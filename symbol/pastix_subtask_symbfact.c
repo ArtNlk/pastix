@@ -95,6 +95,7 @@ pastix_subtask_symbfact( pastix_data_t *pastix_data )
     pastix_order_t *ordemesh;
     int             procnum;
     Clock           timer;
+    size_t          nnz;
 
 #if defined( PASTIX_DISTRIBUTED )
     pastix_int_t *PTS_perm     = NULL;
@@ -315,7 +316,7 @@ pastix_subtask_symbfact( pastix_data_t *pastix_data )
     /*
      * Computes statistics and print informations
      */
-    iparm[IPARM_NNZEROS] = pastixSymbolGetNNZ( pastix_data->symbmtx );
+    nnz = pastixSymbolGetNNZ( pastix_data->symbmtx );
     pastixSymbolGetFlops( pastix_data->symbmtx,
                           iparm[IPARM_FLOAT],
                           iparm[IPARM_FACTORIZATION],
@@ -333,13 +334,13 @@ pastix_subtask_symbfact( pastix_data_t *pastix_data )
 
         if ( iparm[IPARM_VERBOSE] > PastixVerboseNot ) {
             double fillin =
-                (double)( iparm[IPARM_NNZEROS] ) / (double)( ( pastix_data->csc )->gnnz );
+                (double)( nnz ) / (double)( ( pastix_data->csc )->gnnz );
 
             pastix_print( procnum, 0, OUT_FAX_SUMMARY,
-                          (long)iparm[IPARM_NNZEROS],
-                          fillin, clockVal(timer) );
+                          nnz, fillin, clockVal(timer) );
         }
     }
+    iparm[IPARM_NNZEROS] = nnz;
 
     /* Invalidate following steps, and add order step to the ones performed */
     pastix_data->steps &= ~( STEP_ANALYSE   |
