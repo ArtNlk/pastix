@@ -218,18 +218,18 @@ void pastixSymbolDrawMap( pastix_data_t *pastix_data,
  * @name Symbol statistical information subroutines
  * @{
  */
-void         pastixSymbolPrintStats( const symbol_matrix_t *symbptr );
-pastix_int_t pastixSymbolGetNNZ( const symbol_matrix_t *symbptr );
-void         pastixSymbolGetFlops( const symbol_matrix_t *symbmtx,
-                                   pastix_coeftype_t      flttype,
-                                   pastix_factotype_t     factotype,
-                                   double                *thflops,
-                                   double                *rlflops );
-void         pastixSymbolGetTimes( const symbol_matrix_t *symbmtx,
-                                   pastix_coeftype_t      flttype,
-                                   pastix_factotype_t     factotype,
-                                   double                *cblkcost,
-                                   double                *blokcost );
+void   pastixSymbolPrintStats( const symbol_matrix_t *symbptr );
+size_t pastixSymbolGetNNZ( const symbol_matrix_t *symbptr );
+void   pastixSymbolGetFlops( const symbol_matrix_t *symbmtx,
+                             pastix_coeftype_t      flttype,
+                             pastix_factotype_t     factotype,
+                             double                *thflops,
+                             double                *rlflops );
+void   pastixSymbolGetTimes( const symbol_matrix_t *symbmtx,
+                             pastix_coeftype_t      flttype,
+                             pastix_factotype_t     factotype,
+                             double                *cblkcost,
+                             double                *blokcost );
 
 /**
  * @}

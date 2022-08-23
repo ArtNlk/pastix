@@ -323,14 +323,14 @@ recursive_sum( pastix_int_t a, pastix_int_t b,
  *          full symbol matrix.
  *
  *******************************************************************************/
-pastix_int_t
+size_t
 pastixSymbolGetNNZ( const symbol_matrix_t *symbptr )
 {
     symbol_cblk_t *cblk;
     symbol_blok_t *blok;
     pastix_int_t itercblk;
     pastix_int_t cblknbr;
-    pastix_int_t nnz = 0;
+    size_t       nnz = 0;
     pastix_int_t dof = symbptr->dof;
     const pastix_int_t *dofs = symbptr->dofs;
 
