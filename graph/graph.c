@@ -271,7 +271,7 @@ int
 graphSpm2Graph( pastix_graph_t   *graph,
                 const spmatrix_t *spm )
 {
-    spmatrix_t *spm2;
+    spmatrix_t *spmtmp;
 
     /* Parameter checks */
     if ( graph == NULL ) {
@@ -288,22 +288,19 @@ graphSpm2Graph( pastix_graph_t   *graph,
     spmExit( graph );
 
     /* Copy existing datas */
-    spm2 = spmCopy(spm);
-    memcpy( graph, spm2, sizeof(pastix_graph_t) );
+    memcpy( graph, spm, sizeof(pastix_graph_t) );
 
     /* A graph does not contain values */
-    if( spm->flttype != SpmPattern ) {
-        assert( graph->values != NULL );
+    graph->flttype = SpmPattern;
+    graph->values  = NULL;
 
-        graph->flttype = SpmPattern;
-        memFree_null(graph->values);
-    }
+    /* Reallocate the arrays in case of modifications */
+    spmtmp = spmCopy( graph );
+    memcpy( graph, spmtmp, sizeof(pastix_graph_t) );
+    memFree_null( spmtmp );
 
     /* Make sure the graph is in CSC format */
     spmConvert( SpmCSC, graph );
-
-    /* Free the new allocated spm2 */
-    memFree_null( spm2 );
 
     return PASTIX_SUCCESS;
 }
