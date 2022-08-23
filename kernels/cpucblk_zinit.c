@@ -50,7 +50,7 @@ void
 cpucblk_zalloc( pastix_coefside_t  side,
                 SolverCblk        *cblk )
 {
-    pastix_int_t ncols = cblk_colnbr( cblk );
+    size_t ncols = cblk_colnbr( cblk );
 
     /* Make sure they have the correct values */
     assert( PastixLCoef == 0 );
