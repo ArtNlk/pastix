@@ -1,7 +1,7 @@
 ###
 #
 #  @file starpu.rb
-#  @copyright 2020-2021 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
+#  @copyright 2020-2022 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
 #                       Univ. Bordeaux. All rights reserved.
 #
 #  @brief Homebrew formula for StarPU

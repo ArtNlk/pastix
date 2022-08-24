@@ -5,7 +5,7 @@
  * PaStiX low-rank kernel routines to compute a matrix matrix product in either
  * form low or full rank.
  *
- * @copyright 2016-2021 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
+ * @copyright 2016-2022 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
  *                      Univ. Bordeaux. All rights reserved.
  *
  * @version 6.0.3

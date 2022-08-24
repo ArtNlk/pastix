@@ -2,7 +2,7 @@
  *
  * @file gpu_zgemmsp.c
  *
- * @copyright 2012-2021 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
+ * @copyright 2012-2022 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
  *                      Univ. Bordeaux. All rights reserved.
  *
  * PaStiX GPU kernel routines

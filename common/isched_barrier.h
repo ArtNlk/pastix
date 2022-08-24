@@ -2,7 +2,7 @@
  *
  * @file isched_barrier.h
  *
- * @copyright 2014-2021 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
+ * @copyright 2014-2022 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
  *                      Univ. Bordeaux. All rights reserved.
  * @copyright 2009-2010 The University of Tennessee and The University of
  *                      Tennessee Research Foundation. All rights reserved.

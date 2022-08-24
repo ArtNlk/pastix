@@ -2,7 +2,7 @@
  *
  * @file old_api.h
  *
- * @copyright 2013-2021 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
+ * @copyright 2013-2022 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
  *                      Univ. Bordeaux. All rights reserved.
  *
  * file to keep compatibility with older API.

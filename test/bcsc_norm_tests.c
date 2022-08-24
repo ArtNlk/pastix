@@ -2,7 +2,7 @@
  *
  * @file bcsc_norm_tests.c
  *
- * @copyright 2011-2021 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
+ * @copyright 2011-2022 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
  *                      Univ. Bordeaux. All rights reserved.
  *
  * Tests and validate the bcsc_norm routines.

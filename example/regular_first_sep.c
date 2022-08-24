@@ -3,7 +3,7 @@
  *
  * @brief Set by hand the first separator (for regular cube only).
  *
- * @copyright 2015-2021 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
+ * @copyright 2015-2022 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
  *                      Univ. Bordeaux. All rights reserved.
  *
  * @version 6.2.0

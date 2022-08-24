@@ -5,7 +5,7 @@
  * PaStiX symbol functions to compute the computational time induced by the chosen
  * symbolic structure with a given performance model.
  *
- * @copyright 1999-2021 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
+ * @copyright 1999-2022 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
  *                      Univ. Bordeaux. All rights reserved.
  *
  * @version 6.2.0

@@ -2,7 +2,7 @@
  *
  * @file old/step-by-step.c
  *
- * @copyright 2015-2021 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
+ * @copyright 2015-2022 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
  *                      Univ. Bordeaux. All rights reserved.
  *
  * This an example calling PaStiX in step-by-step mode.

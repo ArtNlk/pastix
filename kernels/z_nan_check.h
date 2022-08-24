@@ -1,7 +1,7 @@
 /**
  * @file z_nan_check.h
  *
- * @copyright 2016-2021 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
+ * @copyright 2016-2022 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
  *                      Univ. Bordeaux. All rights reserved.
  *
  * @brief Manage nancheck for lowrank kernels.

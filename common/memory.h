@@ -2,7 +2,7 @@
  *
  * @file memory.h
  *
- * @copyright 1998-2021 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
+ * @copyright 1998-2022 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
  *                      Univ. Bordeaux. All rights reserved.
  *
  * PaStiX memory tracking function.

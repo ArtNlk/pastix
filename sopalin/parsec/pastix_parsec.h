@@ -4,7 +4,7 @@
  *
  * PaRSEC support for the numerical factorization and solve of PaStiX.
  *
- * @copyright 2016-2021 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
+ * @copyright 2016-2022 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
  *                      Univ. Bordeaux. All rights reserved.
  *
  * @version 6.0.3

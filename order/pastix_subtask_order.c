@@ -9,7 +9,7 @@
  *    - PASTIX_ORDERING_PTSCOTCH: Enable PT-Scotch graph partitioning library.
  *    - PASTIX_ORDERING_METIS: Enable Metis graph partitioning library.
  *
- * @copyright 2015-2021 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
+ * @copyright 2015-2022 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
  *                      Univ. Bordeaux. All rights reserved.
  *
  * @version 6.2.1

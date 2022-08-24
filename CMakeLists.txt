@@ -1,6 +1,6 @@
 ###
 #
-#  @copyright 2013-2021 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
+#  @copyright 2013-2022 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
 #                       Univ. Bordeaux. All rights reserved.
 #
 #  @version 6.2.1
@@ -41,7 +41,7 @@ include(CheckFunctionExists)
 # The current version number
 set( PASTIX_VERSION_MAJOR 6 )
 set( PASTIX_VERSION_MINOR 2 )
-set( PASTIX_VERSION_MICRO 1 )
+set( PASTIX_VERSION_MICRO 2 )
 
 set( PASTIX_VERSION "${PASTIX_VERSION_MAJOR}.${PASTIX_VERSION_MINOR}.${PASTIX_VERSION_MICRO}" )
 

@@ -8,7 +8,7 @@
  * potentially costly translation to CSC format, it is possible to
  * factorize A^t and then solve the problem with these results.
  *
- * @copyright 2015-2021 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
+ * @copyright 2015-2022 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
  *                      Univ. Bordeaux. All rights reserved.
  *
  * @version 6.2.0

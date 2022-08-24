@@ -2,7 +2,7 @@
  *
  * @file getline.c
  *
- * @copyright 2019-2021 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
+ * @copyright 2019-2022 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
  *                      Univ. Bordeaux. All rights reserved.
  *
  * @version 6.0.3

@@ -9,16 +9,16 @@
  *    - COMPACT_SMX: Optimization for solve step (TODO: check if not obsolete)
  *    - FORGET_PARTITION: Force to forget the precomputed partition
  *
- * @copyright 2015-2021 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
+ * @copyright 2015-2022 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
  *                      Univ. Bordeaux. All rights reserved.
  *
- * @version 6.2.0
+ * @version 6.2.2
  * @author Xavier Lacoste
  * @author Pierre Ramet
  * @author Mathieu Faverge
  * @author Gregoire Pichon
  * @author Tony Delarue
- * @date 2021-01-25
+ * @date 2022-08-23
  *
  **/
 #include "common.h"

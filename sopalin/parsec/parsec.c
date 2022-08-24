@@ -2,7 +2,7 @@
  *
  * @file parsec.c
  *
- * @copyright 2014-2021 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
+ * @copyright 2014-2022 Bordeaux INP, CNRS (LaBRI UMR 5800), Inria,
  *                      Univ. Bordeaux. All rights reserved.
  *
  * PaStiX PaRSEC routines
