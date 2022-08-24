@@ -1,3 +1,10 @@
+# pastix-6.2.2
+
+- Integrate SPM 1.1.1 to fix int32 bits allocation on border cases
+- graph: Save some memory during the graph allocation by avoiding the value array duplication
+- Fix the NNZ output value when using int32
+- Integrate patch from 6.3.0 to fix issue with gitlab-runner
+
 # pastix-6.2.1
 
 - MPI/PThreads: Small improvement on communication reactivity (pastix/pastix!278)
