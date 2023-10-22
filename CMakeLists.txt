@@ -67,11 +67,11 @@ endif()
 
 # Add extra cmake module path and initialize morse cmake modules
 # --------------------------------------------------------------
-list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake_modules)
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake_modules)
 include(AddSourceFiles)
-
-if (IS_DIRECTORY ${CMAKE_SOURCE_DIR}/cmake_modules/morse_cmake/modules)
-  set( MORSE_CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake_modules/morse_cmake/modules )
+message(SUBMODULEDIR ${CMAKE_SOURCE_DIR})
+if (IS_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/cmake_modules/morse_cmake/modules)
+  set( MORSE_CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake_modules/morse_cmake/modules )
   list(APPEND CMAKE_MODULE_PATH ${MORSE_CMAKE_MODULE_PATH})
   include(MorseInit)
 else()
